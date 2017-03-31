@@ -29,7 +29,7 @@ The idea here is to identify what ideas from the class you will use in carrying 
 ### Evaluation of Results
 
 ## Architecture Diagram
-![SchemeDefender](/SchemeDefender.png?raw=true "SchemeDefender")
+![prototype](/prototype.png?raw=true "prototype")
 
 The player will be able to move left and right and shoot towards the enemy ships.
 The player's movement will be bounded by the edge of the window and will stop at
