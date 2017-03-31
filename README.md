@@ -50,8 +50,24 @@ Write concrete steps for your schedule to move from concept to working system.
 
 ### Public Presentation (Mon Apr 24, Wed Apr 26, or Fri Apr 28 [your date to be determined later])
 
+## Group Responsibilities
+
 ### Tim Larocque @timLarocque
-will write the....
+For the first milestone, I will be working on finding images for the player and
+enemies as well as getting the images to display to the screen.
+
+For the second milestone, I will be working on getting the enemies to appear at
+the top of the screen in random locations as well as implementing a map function
+that will move every enemy downward. The enemies will be contained in a list that
+the map will walk through and change the y-coordinate values of the images. The
+number of enemies will be determined by the user when the game is launched; there
+will be 3 different levels of difficulty: easy, normal, hard.
+
+For the third milestone/Public Presentation, I will be working on having the game
+work with File I/O to load high scores and having a live score on the screen
+update as the player "destroys" an enemy or an enemy passes through the bottom
+of the screen. The game will end once all enemies have been destroyed or have
+passed the bottom of the screen.
 
 ### Shaquill "Sonny" Chea @cheapets
 will work on...
