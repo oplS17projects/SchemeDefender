@@ -89,4 +89,4 @@ After planning out our steps for completing the project we decided to split up t
 
 - Missile shooting/collision: spawning missiles to "destroy" the enemy.
 
-Fullfilling all parts of the plan would allow us to complete the project as intended frmm the start. However just like other teams, we expect to run into some obstacles while trying to accomplishing everything we need to do.
+Fullfilling all parts of the plan would allow us to complete the project as intended from the start. However just like other teams, we expect to run into some obstacles while trying to accomplishing everything we need to do.
