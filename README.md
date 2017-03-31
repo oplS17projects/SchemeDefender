@@ -1,6 +1,10 @@
 # SchemeDefender
 
 ### Statement
+Scheme Defender is a Galaga style game developed in Racket. We are both very
+interested in video games and find the thought of making a game not only
+challenging but also entertaining. Through this project we hope to learn a
+different approach to making various games through functional programming.
 
 ### Analysis
 Explain what approaches from class you will bring to bear on the project.
