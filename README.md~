@@ -29,19 +29,9 @@ The idea here is to identify what ideas from the class you will use in carrying 
 ### Evaluation of Results
 
 ## Architecture Diagram
-![prototype](/prototype.png?raw=true "prototype")
+Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
 
-The player will be able to move left and right and shoot towards the enemy ships.
-The player's movement will be bounded by the edge of the window and will stop at
-the edge of the window. Any collision between the player and an enemy will end
-the game early. If the player destroys an enemy, the player's score will increase.
-
-The enemy ships will continuously move down the screen and they will be destroyed if
-the player shoots them or they will stop being tracked after they move past the
-bottom of the screen. If the enemy moves past the bottom of the screen the player's
-score will decrease. Enemies will not spawn on top of other enemy ships and their
-starting locations will be spaced apart across the screen based on the width of
-the image.
+Create several paragraphs of narrative to explain the pieces and how they interoperate.
 
 ## Schedule
 Explain how you will go from proposal to finished product.
@@ -70,24 +60,8 @@ By the time of presentation we should have the previous goals implemented into t
 - Missle shooting/collision
 An additional feature we want to include is a scoreboard, displaying Highscores from the player.
 
-## Group Responsibilities
-
 ### Tim Larocque @timLarocque
-For the first milestone, I will be working on finding images for the player and
-enemies as well as getting the images to display to the screen.
-
-For the second milestone, I will be working on getting the enemies to appear at
-the top of the screen in random locations as well as implementing a map function
-that will move every enemy downward. The enemies will be contained in a list that
-the map will walk through and change the y-coordinate values of the images. The
-number of enemies will be determined by the user when the game is launched; there
-will be 3 different levels of difficulty: easy, normal, hard.
-
-For the third milestone/Public Presentation, I will be working on having the game
-work with File I/O to load high scores and having a live score on the screen
-update as the player "destroys" an enemy or an enemy passes through the bottom
-of the screen. The game will end once all enemies have been destroyed or have
-passed the bottom of the screen.
+will write the....
 
 ### Shaquill "Sonny" Chea @cheapets
 After planning out our steps for completing the project we decided to split up the workload. The parts that I'll be working on are:
