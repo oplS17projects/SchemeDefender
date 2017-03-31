@@ -44,15 +44,6 @@ starting locations will be spaced apart across the screen based on the width of
 the image.
 
 ## Schedule
-Explain how you will go from proposal to finished product.
-
-There are three deliverable milestones to explicitly define, below.
-
-The nature of deliverables depend on your project, but may include things like processed data ready for import, core algorithms implemented, interface design prototyped, etc.
-
-You will be expected to turn in code, documentation, and data (as appropriate) at each of these stages.
-
-Write concrete steps for your schedule to move from concept to working system.
 
 ### First Milestone (Sun Apr 9)
 We intend to have the basic foundation of our project running:
@@ -94,9 +85,8 @@ After planning out our steps for completing the project we decided to split up t
 
 - Keyboard input/movement: Making the sprites move accordingly to the key you pressed. To accomplish this I plan on using the left/right arrow keys as the movement keys for the player spaceship.
 
-- Window collision: Creating bounds within the display window that limits any Images/Sprites that we're using from going off the screen unless specified. Elaborating further form my Keyboard explaination, I decided to have boundries from the display window. 
+- Window collision: Creating bounds within the display window that limits any Images/Sprites that we're using from going off the screen unless specified. Elaborating further form my Keyboard explaination, I decided to have boundries from the display window.
 
 - Missile shooting/collision: spawning missiles to "destroy" the enemy.
 
 Fullfilling all parts of the plan would allow us to complete the project as intended form the start. Just like other teams, we expect to run into some obstacles while trying to accomplishing everything we need to do.
-
