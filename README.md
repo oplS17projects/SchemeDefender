@@ -29,9 +29,19 @@ The idea here is to identify what ideas from the class you will use in carrying 
 ### Evaluation of Results
 
 ## Architecture Diagram
-Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
+![SchemeDefender](/SchemeDefender.png?raw=true "SchemeDefender")
 
-Create several paragraphs of narrative to explain the pieces and how they interoperate.
+The player will be able to move left and right and shoot towards the enemy ships.
+The player's movement will be bounded by the edge of the window and will stop at
+the edge of the window. Any collision between the player and an enemy will end
+the game early. If the player destroys an enemy, the player's score will increase.
+
+The enemy ships will continuously move down the screen and they will be destroyed if
+the player shoots them or they will stop being tracked after they move past the
+bottom of the screen. If the enemy moves past the bottom of the screen the player's
+score will decrease. Enemies will not spawn on top of other enemy ships and their
+starting locations will be spaced apart across the screen based on the width of
+the image.
 
 ## Schedule
 Explain how you will go from proposal to finished product.
