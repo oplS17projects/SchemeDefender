@@ -1,20 +1,23 @@
 # SchemeDefender
 
 ### Statement
-Scheme Defender is a mimic of the classical game "Galaga", created in Racket. The user would be able to control a spaceship via keyboard inputs and fire missles at the enemy. Just like many of our peers, both of us are interested in video games and thought it would be an excellent project to do. Not only did we want something that was challenging, but entertaining as well. Through the development of this project we hope to learn 
+Scheme Defender is a mimic of the classical game "Galaga", created in Racket. Just like many of our peers, both of us are interested in video games and thought it would be an excellent project to do. Not only did we want something that was challenging, but entertaining as well. Through the development of this project we hope to learn a different approach to making various games through functional programming.
 
 ### Analysis
 From the numerous libaries available to us in DrRacket we decided on using the following:
 - 2htdp/image: Assist with displaying Images/Sprites
 - 2htdp/universe: Assist with interactions between the user and program
 - GUI: Creating a friendly to use interface
-- play-sound: Used for interactions between the Images/Sprites
+
+The player will be interacting within a field of objects, the ship, enemies, and missle projectiles. Each of the objects will be manipulated via data abstraction. For instances the player ship will have a constant (y) coord. while the user can change it's (x) coord. with the right/left arrow keys. The (x) coord will have +1/-1 to it making the player ship move right/left based on the key board input. The enemies that the player will be fighting will have a recursive procedure implemented that allows them to be spawned continuously until they defeat the player. They will also move accordingly to the (x) & (y) coord. plane. Lastly the missles will help filter the enemy objects that were spawned.
+
+Additional features include having a scoreboard to keep track of the how many enemy ships the player shot down, and possibly having sound effects from the play-sound library.
 
 ### Deliverable and Demonstration
-Our final project is to have a functioning program that will simulate a "Galaga" like game within the Racket language. This will be the result of combining various libraries in order to meet each step of our plan for accomplishing the project intended. During the presentation we should be able to display a majority of the functions we planned on doing, such as moving an Image/Sprite, spawning enemies, and firing missles.
+Our goal is to have a functioning program that will simulate a "Galaga" like game within the Racket language. This will be the result of combining various libraries in order to complete each component of the game. During the presentation we should be able to display a majority of the functions we planned on doing, such as moving an Image/Sprite, spawning enemies, and firing missles.
 
 ### Evaluation of Results
-We intend to complete the game with all components functioning. 
+We intend on having an enjoyable game for the user to play with. 
 
 ## Architecture Diagram
 ![prototype](/prototype.png?raw=true "prototype")
