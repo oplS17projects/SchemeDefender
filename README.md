@@ -1,32 +1,20 @@
 # SchemeDefender
 
 ### Statement
-Scheme Defender is a Galaga style game developed in Racket. We are both very
-interested in video games and find the thought of making a game not only
-challenging but also entertaining. Through this project we hope to learn a
-different approach to making various games through functional programming.
+Scheme Defender is a mimic of the classical game "Galaga", created in Racket. The user would be able to control a spaceship via keyboard inputs and fire missles at the enemy. Just like many of our peers, both of us are interested in video games and thought it would be an excellent project to do. Not only did we want something that was challenging, but entertaining as well. Through the development of this project we hope to learn 
 
 ### Analysis
-Explain what approaches from class you will bring to bear on the project.
-
-Be explicit about the techiques from the class that you will use. For example:
-
-- Will you use data abstraction? How?
-- Will you use recursion? How?
-- Will you use map/filter/reduce? How?
-- Will you use object-orientation? How?
-- Will you use functional approaches to processing your data? How?
-- Will you use state-modification approaches? How? (If so, this should be encapsulated within objects. `set!` pretty much should only exist inside an object.)
-- Will you build an expression evaluator, like we did in the symbolic differentatior and the metacircular evaluator?
-- Will you use lazy evaluation approaches?
-
-The idea here is to identify what ideas from the class you will use in carrying out your project.
-
-**Your project will be graded, in part, by the extent to which you adopt approaches from the course into your implementation, _and_ your discussion about this.**
+From the numerous libaries available to us in DrRacket we decided on using the following:
+- 2htdp/image: Assist with displaying Images/Sprites
+- 2htdp/universe: Assist with interactions between the user and program
+- GUI: Creating a friendly to use interface
+- play-sound: Used for interactions between the Images/Sprites
 
 ### Deliverable and Demonstration
+Our final project is to have a functioning program that will simulate a "Galaga" like game within the Racket language. This will be the result of combining various libraries in order to meet each step of our plan for accomplishing the project intended. During the presentation we should be able to display a majority of the functions we planned on doing, such as moving an Image/Sprite, spawning enemies, and firing missles.
 
 ### Evaluation of Results
+We intend to complete the game with all components functioning. 
 
 ## Architecture Diagram
 ![prototype](/prototype.png?raw=true "prototype")
