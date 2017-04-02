@@ -24,6 +24,12 @@ the player's score appropriately, and write-out the final score to a list of hig
 ## Architecture Diagram
 ![prototype](/prototype.png?raw=true "prototype")
 
+![architectureDiagram](/architectureDiagram.png?raw=true "architectureDiagram")
+
+The first diagram is a prototype of what we expect the game to look like once we
+are done. The second diagram is the Architecture Diagram depicting how all of the
+parts of the prototype will interact with each other.
+
 The player will be able to move left and right and shoot towards the enemy ships.
 The player's movement will be bounded by the edge of the window and will stop at
 the edge of the window. Any collision between the player and an enemy will end
