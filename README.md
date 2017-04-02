@@ -17,7 +17,9 @@ Additional features include having a scoreboard to keep track of the how many en
 Our goal is to have a functioning program that will simulate a "Galaga" like game within the Racket language. This will be the result of combining various libraries in order to complete each component of the game. During the presentation we should be able to display a majority of the functions we planned on doing, such as moving an Image/Sprite, spawning enemies, and firing missles.
 
 ### Evaluation of Results
-We intend on having an enjoyable game for the user to play with. 
+When the project is finised, the game should be able to run based on user decided
+window size and difficulty, to appropriately create and destroy enemies, update
+the player's score appropriately, and write-out the final score to a list of high scores.
 
 ## Architecture Diagram
 ![prototype](/prototype.png?raw=true "prototype")
