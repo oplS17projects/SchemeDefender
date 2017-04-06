@@ -26,6 +26,8 @@ The idea here is to identify what ideas from the class you will use in carrying 
 
 ### Deliverable and Demonstration
 
+At the end of the project, we hope to have a functional game that
+
 ### Evaluation of Results
 
 ## Architecture Diagram
