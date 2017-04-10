@@ -116,3 +116,6 @@ After planning out our steps for completing the project we decided to split up t
 Fulfilling all parts of the plan would allow us to complete the project as
 intended from the start. However just like other teams, we expect to run into
 some obstacles while trying to accomplishing everything we need to do.
+
+###Version 0.2
+Currently we're still in the progress of working on the movement keys for our game, however we working on it around the clock.
