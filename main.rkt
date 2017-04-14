@@ -56,6 +56,28 @@
 
 
 ;;Function that changes values, is used to update objects
-;;Also to create other objects in a timed manner
-;;.the main function receives all the data of the game and sends them to other functions
+;;Also to cThat modify the values ​​to generate effects in the game.reate other objects in a timed manner
+;;The main function receives all the data of the game and sends them to other functions
 ;;That modify the values to generate effects in the game.
+
+;;Keyboard Inputs
+(define (keyboard m key)
+  (cond
+    ;;Left arrow key
+    [(and (equal? key "left") (> (world-player m) 20))
+     (make-world
+      (- (world-player m) player-ship-speed)
+      (world-
+
+;;Controls the world, updates all objects within the game
+(define (start-game)
+  (big-bang
+   (make-world (/ width 2) empty enemy)
+   [on-key keyboard]
+   [stop-when lose? give-final]
+   ))
+   
+       
+;;Game Star
+(start-game)
+      
