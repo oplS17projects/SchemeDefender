@@ -1,74 +1,61 @@
 #lang racket
 
+;;Including the libraries we initially decided to use
 (require 2htdp/image)
 (require 2htdp/universe)
+(require rsound)
 
-;;Background
-(define w-bg 500)
-(define h-bg 500)
-(define blank-bg (rectangle w-bg h-bg "outline" "blue"))
-
-;;Creating parameters for Defender
-(define image (bitmap "image.jpg"))
-(define mov 10)
-(define x-pos 250)
-(define y-pos 450)
-(define left-side (/ (image-width image) 2))
-(define right-side (- w-bg (/ (image-width image) 2)))
-(define defender-init x-pos)
-
-
-;; defender-key: Defender Key -> Defender
-; calculates the state following the given state if given key is pressed
-(define (defender-key current key)
-  (cond
-    [(string=? key "left") (move-left current)]
-    [(string=? key "right") (move-right current)]
-    [else current]
-    ))
-(check-expect (defender-key 100 "left") (- 100 DEF_SPEED))
-(check-expect (defender-key 100 "right") (+ 100 DEF_SPEED))
-
-;;Creating left boundries
-(define (touch-left-wall? current) 
-  (<= current left-side)
-  )
-(check-expect (touch-left-wall? left-side) true)
-(check-expect (touch-left-wall? 200) false)
-
-;;Creating right boundries
-(define (touch-right-wall? current) 
-  (cond
-    [(>= current right-side) true]
-    [else false]
-    ))
-(check-expect (touch-right-wall? 10) false)
-(check-expect (touch-right-wall? right-side) true)
-
-;;Movement key for Right arrow
-(define (move-left current)
-  (if (touch-left-wall? current)
-      current
-      (- current mov) 
-      ))
-(check-expect (move-left 200) (- 200 mov))
-(check-expect (move-left left-side) left-side)
-
-;;Movement key for Left arrow
-(define (move-right current)
-  (if (touch-right-wall? current)
-      current
-      (+ current mov)
-      ))
-(check-expect (move-right 10) (+ 10 mov))
-(check-expect (move-right right-side) right-side)
-
-;;Displays the image
-(define (defender-render current)
-  (place-image image
-               current
-               y-pos
-               blank-bg))
+;;Window Width
+(define width 780)
+;;Window Height
+(define height 500)
+;;Movement speed for Spaceship
+(define player-ship-speed 25)
+;;Movement speed for missiles
+(define missle-speed 15)
+;;Movement speed for Enemy
+(define enemy-speed 6)
+;;How fast the player will be able to fire
+(define attack-speed 5)
+;;Creating Missle Object
+(define projectile (rectangle 5 10 "solid" "red"))
+(define range-right 20)
+;;Creating background image
+(define background "")
+;;Game-over display image
+(define game-over-image "")
+;;Player ship
+(define player-ship "")
+;;Defining Enemey Objects
+(define enemy "")
 
 
+;;Posibility of enemy attack
+(define int(truncate(/ width attack-speed)))
 
+;;Sound Functions
+(define (projectile-fire) (rs-read ""))
+(define (explosion) (rs-read ""))
+(define (menu) (rs-read ""))
+
+;;Level Design
+(define level 1)
+(define puntuacion 0)
+
+;;Changes the parameters of the game, increases the difficulty
+
+;;Enemy Parameters
+
+;;List of where enemies are kept
+(define enemies
+  (list
+   (list (random width) 20 #t)
+   (list (random width) 40 #f)
+   (list (random width) 60 #t)
+   (list (random width) 80 #f)))
+
+
+;;Function that changes values, is used to update objects
+;;Also to create other objects in a timed manner
+;;.the main function receives all the data of the game and sends them to other functions
+;;That modify the values to generate effects in the game.
