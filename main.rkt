@@ -5,30 +5,21 @@
 (require 2htdp/universe)
 (require rsound)
 
-;;Window Width
-(define width 780)
-;;Window Height
-(define height 550)
-;;Movement speed for Spaceship
-;; (define player-ship-speed 25)
-;;Movement speed for missiles
-;; (define missile-speed 15)
-;;Movement speed for Enemy
-;; (define enemy-speed 2)
-;;How fast the player will be able to fire
-;; (define attack-speed 4)
-;;Creating Missle Object
-(define projectile (bitmap "image/missile.png"))
-(define range-right 20)
-;;Creating background image
-(define background (bitmap "image/background.jpg"))
-;;Game-over display image
-(define game-over-image (bitmap "image/GG.png"))
-;;Player ship
-(define player-ship (bitmap "image/ship.png"))
 
-;;Defining Enemey Objects
+;; images
+(define projectile (bitmap "image/missile.png"))
+(define background (bitmap "image/background.png"))
+(define game-over-image (bitmap "image/GG.png"))
+(define player-ship (bitmap "image/ship.png"))
 (define enemy (bitmap "image/enemy.jpg")) ;;lmao
+
+
+;; world borders
+(define width (image-width background))
+(define height (image-height background))
+
+  
+(define range-right 20)
 
 ;; list of speeds
 (define speeds (list (cons 'player 25) ; player
@@ -88,7 +79,7 @@
   (place-image
    player-ship
    (world-player m)
-   (- height 5)
+   (- height 30)
    (display-missile (world-projectile-fire m) (world-enemies m))))
 
 ;Shows bullets on screen and sends data to "aliens"
@@ -118,7 +109,7 @@
 (define (pop-up)
   (place-image
    (text
-    (string-append "points: " (number->string punctuation)) 24 "blue") 700 40 background))
+    (string-append "points: " (number->string punctuation)) 24 "blue") (- width 70) 40 background))
 
 ;Function that changes values, is used to update positions of objects
 ;also to create other objects in a timed way, the main function receives all the data of the game and sends them to other functions
