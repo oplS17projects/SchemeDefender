@@ -10,13 +10,13 @@
 ;;Window Height
 (define height 550)
 ;;Movement speed for Spaceship
-(define player-ship-speed 25)
+;; (define player-ship-speed 25)
 ;;Movement speed for missiles
-(define missile-speed 15)
+;; (define missile-speed 15)
 ;;Movement speed for Enemy
-(define enemy-speed 2)
+;; (define enemy-speed 2)
 ;;How fast the player will be able to fire
-(define attack-speed 4)
+;; (define attack-speed 4)
 ;;Creating Missle Object
 (define projectile (bitmap "image/missile.png"))
 (define range-right 20)
@@ -30,9 +30,15 @@
 ;;Defining Enemey Objects
 (define enemy (bitmap "image/enemy.jpg")) ;;lmao
 
+;; list of speeds
+(define speeds (list (cons 'player 25) ; player
+                     15 ; missile
+                     2 ; enemy
+                     4)) ; attack
+
 
 ;;Posibility of enemy attack
-(define int(truncate(/ width attack-speed)))
+(define int (truncate (/ width (car (cdddr speeds)))))
 
 ;;Sound Functions
 (define (projectile-fire) (rs-read "Tuturu.wav"))
@@ -46,11 +52,11 @@
 ;;Changes the parameters of the game, increases the difficulty
 (define (difficulty dif)
   (begin
-    (set! player-ship-speed (+ player-ship-speed 4))
+    (map (λ (n) (cond
+                  [(not (pair? n)) (set! n (+ n 1))]
+                  [(equal? (car n) 'player) (set! n (cons 'player (+ (cdr n) 4)))]))
+         speeds)
     (set! level (+ level 1))
-    (set! attack-speed (+ attack-speed 1))
-    (set! enemy-speed (+ enemy-speed 1))
-    (set! missile-speed (+ missile-speed 1))
     (if
      (= level 5)
         (set! enemy enemy)
@@ -141,7 +147,7 @@
      (cons
       (list
        (caar b)
-       (- (cadar b) missile-speed))
+       (- (cadar b) (caddr speeds)))
       (projectile-move (cdr b)))]))
 
 ;Changing position of enemy:
@@ -154,14 +160,14 @@
      (cons
       (list
        (caar m)
-       (+ (cadar m) enemy-speed)
+       (+ (cadar m) (cadddr speeds))
        (car (cddar m)))
       (enemy-move (cdr m)))]
     ;Moves right
     [(car (cddar m))
      (cons
       (list
-       (+ (caar m) enemy-speed)
+       (+ (caar m) (cadddr speeds))
        (+ (cadar m) 0)
        (if (> width (caar m))
            (if ( = 1 (random int))
@@ -171,7 +177,7 @@
     [(not (car (cddar m)))
      (cons
       (list
-       (- (caar m) enemy-speed)
+       (- (caar m) (cadddr speeds))
        (+ (cadar m) 0)
        (if (> (caar m) 20)
            (if (= 1 (random int))
@@ -211,12 +217,12 @@
   (cond
     [(and (equal? key "left") (> (world-player m) 20))
      (make-world
-      (- (world-player m) player-ship-speed)
+      (- (world-player m) (cdar speeds))
       (world-projectile-fire m)
       (world-enemies m))]
     [(and (equal? key "right") (< (world-player m) (- width 20)))
      (make-world
-      (+ (world-player m) player-ship-speed)
+      (+ (world-player m) (cdar speeds))
       (world-projectile-fire m)
       (world-enemies m))]
     [(equal? key " ")
