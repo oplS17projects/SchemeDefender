@@ -18,17 +18,17 @@
 ;;How fast the player will be able to fire
 (define attack-speed 4)
 ;;Creating Missle Object
-(define projectile .)
+(define projectile (bitmap "image/missile.png"))
 (define range-right 20)
 ;;Creating background image
-(define background .)
+(define background (bitmap "image/background.jpg"))
 ;;Game-over display image
-(define game-over-image .)
+(define game-over-image (bitmap "image/GG.png"))
 ;;Player ship
-(define player-ship .)
+(define player-ship (bitmap "image/ship.png"))
 
 ;;Defining Enemey Objects
-(define enemy .) ;;lmao
+(define enemy (bitmap "image/enemy.jpg")) ;;lmao
 
 
 ;;Posibility of enemy attack
