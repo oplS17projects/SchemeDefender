@@ -32,13 +32,12 @@
 (define int (truncate (/ width (car (cdddr speeds)))))
 
 ;;Sound Functions
-(define (projectile-fire) (rs-read "Tuturu.wav"))
-(define (explosion) (rs-read "Tuturu.wav"))
-(define (menu) (rs-read "Tuturu.wav"))
+(define (projectile-fire) (rs-read "sounds/shoot.wav"))
+(define (explosion) (rs-read "sounds/shoot.wav"))
+(define (menu) (rs-read "sounds/shoot.wav"))
 
 ;;Level Design
 (define level 1)
-(define punctuation 0)
 
 ;;Changes the parameters of the game, increases the difficulty
 (define (difficulty dif)
@@ -58,10 +57,7 @@
 ;;List of where enemies are kept
 (define enemies
   (list
-   (list (random width) 20 #t)
-   (list (random width) 40 #f)
-   (list (random width) 60 #t)
-   (list (random width) 80 #f)))
+   (list (random width) 20 #t)))
 
 ;Send the list of enemies and add an enemy
 (define (make-enemy en)
@@ -109,7 +105,7 @@
 (define (pop-up)
   (place-image
    (text
-    (string-append "points: " (number->string punctuation)) 24 "blue") (- width 70) 40 background))
+    (string-append (number->string level)) 50 "blue") (- width 70) 680 background))
 
 ;Function that changes values, is used to update positions of objects
 ;also to create other objects in a timed way, the main function receives all the data of the game and sends them to other functions
@@ -195,7 +191,6 @@
   (cond
     [(<= (distance a b) range-right)
      (begin
-       (set! punctuation (+ 10 punctuation))
        (explosion) #t)] [else #f]))
 
 ;Determining the distance of object
@@ -244,12 +239,6 @@
 
 (define (last-image m)
   (begin
-    (display "Final Level: ")
-    (display level)
-    (newline)
-    (display "Final Score: ")
-    (display punctuation)
-    (newline)
     (set! background game-over-image)
     (communicator m)))
 
