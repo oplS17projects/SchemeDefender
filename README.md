@@ -5,7 +5,7 @@ Scheme Defender is a mimic of the classical game "Galaga", created in Racket.
 Just like many of our peers, both of us are interested in video games and thought
 it would be an excellent project to do. Not only did we want something that was
 challenging, but entertaining as well. Through the development of this project
-we hope to learn a different approach to making various games through functional
+we learned a different approach to making various games through functional
 programming.
 
 ### Analysis
@@ -14,15 +14,14 @@ From the numerous libraries available to us in Racket we decided on using the fo
 - 2htdp/universe: Assist with interactions between the user and program
 - GUI: Creating a friendly to use interface
 
-The player will be interacting within a field of objects, the ship, enemies, and
-missile projectiles. Each of the objects will be manipulated via data abstraction.
-For instance, the player ship will have a constant (y) coordinate while the user
+The player interacts within a field of objects, the ship, enemies, and
+missile projectiles. Each of the objects are manipulated via data abstraction.
+For instance, the player ship has a constant (y) coordinate while the user
 can change it's (x) coordinate with the right/left arrow keys. The (x) coordinate
-will have +1/-1 to it making the player ship move right/left based on the keyboard
-input. The enemies that the player will be fighting will have a recursive procedure
+has +1/-1 to it making the player ship move right/left based on the keyboard
+input. The enemies that the player fights has a recursive procedure
 implemented that allows them to be spawned continuously until they defeat the
-player. They will also move accordingly to the (x) & (y) coordinate plane.
-Lastly the missiles will help filter the enemy objects that were spawned.
+player. They also move accordingly to the (x) & (y) coordinate plane.
 
 Additional features include having a scoreboard to keep track of the how many
 enemy ships the player shot down, and possibly having sound effects from the
@@ -64,7 +63,7 @@ the image.
 ## Schedule
 
 ### First Milestone (Sun Apr 9)
-We intend to have the basic foundation of our project running:
+We had the basic foundation of our project running:
 - Getting our Images/Sprite to Display properly
 - Keyboard inputs/movement for the Images/Sprite
 From this implementation we're able to build upon it even further.
@@ -84,24 +83,30 @@ from the player.
 ## Group Responsibilities
 
 ### Tim Larocque @timLarocque
-For the first milestone, I will be working on finding images for the player and
-enemies as well as getting the images to display to the screen.
+For the first milestone, I found some base images for the player and
+enemies and got the images to display to the screen.
 
-For the second milestone, I will be working on getting the enemies to appear at
-the top of the screen in random locations as well as implementing a map function
-that will move every enemy downward. The enemies will be contained in a list that
+For the second milestone, I worked on getting the enemies to appear at
+the top of the screen in random locations. The enemies are contained in a list that
 the map will walk through and change the y-coordinate values of the images. The
-number of enemies will be determined by the user when the game is launched; there
-will be 3 different levels of difficulty: easy, normal, hard.
+number of enemies starts at one enemy at level one and the amount of enemies
+increases by one every level. I used a map to increase the level and the speeds
+of missiles, enemies, the player, and the rate at which the enemies decide to
+proceed down the screen.
 
-For the third milestone/Public Presentation, I will be working on having the game
-work with File I/O to load high scores and having a live score on the screen
-update as the player "destroys" an enemy or an enemy passes through the bottom
-of the screen. The game will end once all enemies have been destroyed or have
-passed the bottom of the screen.
+For the third milestone/Public Presentation, I will be worked on having a live
+score on the screen update as the player "destroys" an enemy or an enemy passes
+through the bottom of the screen. The game ends once an enemy has passed the
+bottom of the screen.
+
+A small bug in the code that we found and couldn't figure out how to fix was
+that the missiles were not showing up properly. I thought this added a level
+of complexity and difficulty to the game, so we decided to make this a feature,
+not a bug.
 
 ### Shaquill "Sonny" Chea @cheapets
-After planning out our steps for completing the project we decided to split up the workload. The parts that I'll be working on are:
+After planning out our steps for completing the project we decided to split up
+the workload. The parts that I'll be working on are:
 
 - Keyboard input/movement: Making the sprites move accordingly to the key you
   pressed. To accomplish this I plan on using the left/right arrow keys as the
