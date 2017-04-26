@@ -122,5 +122,5 @@ Fulfilling all parts of the plan would allow us to complete the project as
 intended from the start. However just like other teams, we expect to run into
 some obstacles while trying to accomplishing everything we need to do.
 
-###Version 0.2
-Currently we're still in the progress of working on the movement keys for our game, however we working on it around the clock.
+Overall we were able to accomplish most of what we intended to do, however as Tim mentioned we had a bug with
+having the missile to display properly. 
