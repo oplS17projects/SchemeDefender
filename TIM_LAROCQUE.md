@@ -14,7 +14,8 @@ programming.
 - RSound
 
 We used the two 2htdp libraries to display and play the game. They allowed us to
-utilize keyboard input and to use that input to update the game display.
+utilize keyboard input and to use that input to update the game display. Shaquill
+had worked with the RSound library to have sound play through the game.
 
 ### My Big Contribution
 A small precursor to the contribution is the list that both of the below items
