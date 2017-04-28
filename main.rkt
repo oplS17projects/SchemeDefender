@@ -11,7 +11,7 @@
 (define background (bitmap "image/background.png"))
 (define game-over-image (bitmap "image/GG.png"))
 (define player-ship (bitmap "image/ship.png"))
-(define enemy (bitmap "image/enemy.jpg")) ;;lmao
+(define enemy-ship (bitmap "image/enemy.jpg")) ;;lmao
 
 
 ;; world borders
@@ -27,9 +27,14 @@
                      2 ; enemy
                      4)) ; attack
 
+;; abstracting accessors for speeds
+(define player (cdar speeds))
+(define missile (cadr speeds))
+(define enemy (caddr speeds))
+(define attack (car (cdddr speeds)))
 
 ;;Posibility of enemy attack
-(define int (truncate (/ width (car (cdddr speeds)))))
+(define int (truncate (/ width attack)))
 
 ;;Sound Functions
 (define (projectile-fire) (rs-read "sounds/shoot.wav"))
@@ -42,17 +47,17 @@
 ;;Changes the parameters of the game, increases the difficulty
 (define (difficulty dif)
   (begin
-    (map (λ (n) (cond
-                  [(not (pair? n)) (set! n (+ n 1))]
-                  [(equal? (car n) 'player) (set! n (cons 'player (+ (cdr n) 4)))]))
-         speeds)
+    (set! speeds (map (λ (n) (cond
+                               [(not (pair? n)) (+ n 1)]
+                               [(equal? (car n) 'player) (cons 'player (+ (cdr n) 4))]))
+                      speeds))
     (set! level (+ level 1))
     (if
      (= level 5)
-        (set! enemy enemy)
-        ""
-        )
-     (* 20 (+ 1 (random level)))))
+     (set! enemy-ship enemy-ship)
+     ""
+     )
+    (* 20 (+ 1 (random level)))))
 
 ;;List of where enemies are kept
 (define enemies
@@ -96,7 +101,7 @@
     [(empty? b) (pop-up)]
     [(cons? b)
      (place-image
-      enemy
+      enemy-ship
       (caar b)
       (cadar b)
       (display-enemy (cdr b)))]
@@ -134,7 +139,7 @@
      (cons
       (list
        (caar b)
-       (- (cadar b) (caddr speeds)))
+       (- (cadar b) enemy))
       (projectile-move (cdr b)))]))
 
 ;Changing position of enemy:
@@ -147,14 +152,14 @@
      (cons
       (list
        (caar m)
-       (+ (cadar m) (cadddr speeds))
+       (+ (cadar m) attack)
        (car (cddar m)))
       (enemy-move (cdr m)))]
     ;Moves right
     [(car (cddar m))
      (cons
       (list
-       (+ (caar m) (cadddr speeds))
+       (+ (caar m) attack)
        (+ (cadar m) 0)
        (if (> width (caar m))
            (if ( = 1 (random int))
@@ -164,7 +169,7 @@
     [(not (car (cddar m)))
      (cons
       (list
-       (- (caar m) (cadddr speeds))
+       (- (caar m) attack)
        (+ (cadar m) 0)
        (if (> (caar m) 20)
            (if (= 1 (random int))
@@ -203,12 +208,12 @@
   (cond
     [(and (equal? key "left") (> (world-player m) 20))
      (make-world
-      (- (world-player m) (cdar speeds))
+      (- (world-player m) player)
       (world-projectile-fire m)
       (world-enemies m))]
     [(and (equal? key "right") (< (world-player m) (- width 20)))
      (make-world
-      (+ (world-player m) (cdar speeds))
+      (+ (world-player m) player)
       (world-projectile-fire m)
       (world-enemies m))]
     [(equal? key " ")
