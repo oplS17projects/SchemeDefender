@@ -206,16 +206,19 @@
 ;Keyboard defintion
 (define (keyboard m key)
   (cond
+    
     [(and (equal? key "left") (> (world-player m) 20))
      (make-world
       (- (world-player m) player)
       (world-projectile-fire m)
       (world-enemies m))]
+    
     [(and (equal? key "right") (< (world-player m) (- width 20)))
      (make-world
       (+ (world-player m) player)
       (world-projectile-fire m)
       (world-enemies m))]
+    
     [(equal? key " ")
      (make-world
       (world-player m)
